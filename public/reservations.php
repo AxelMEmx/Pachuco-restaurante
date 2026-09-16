@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-session_start();
+
 require_once __DIR__ . '/../app/auth.php';
 require_login();
 
@@ -17,6 +17,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($tableId <= 0 || $reservationDate === '' || $reservationTime === '' || $guests <= 0) {
         flash('error', 'Completa fecha, hora, personas y preferencia de mesa.');
+        redirect('reservations.php');
+    }
+
+    if ($reservationDate < date('Y-m-d')) {
+    flash('error', 'La fecha de reservación no puede ser en el pasado.');
+    redirect('reservations.php');
+    }
+
+    $tableCheck = db()->prepare('SELECT id FROM restaurant_tables WHERE id = ?');
+    $tableCheck->execute([$tableId]);
+    if (!$tableCheck->fetch()) {
+        flash('error', 'La mesa seleccionada no existe. Intenta de nuevo.');
         redirect('reservations.php');
     }
 
@@ -50,7 +62,7 @@ require_once __DIR__ . '/../app/layout/header.php';
         <h1>Reserva tu mesa</h1>
         <p class="muted">Cuéntanos cuándo vienes y prepararemos el espacio ideal para tu visita.</p>
     </div>
-    <a class="button secondary" href="<?= e(app_url('menu.php')) ?>">Ver menu</a>
+    <a class="button secondary" href="<?= e(app_url('menu.php')) ?>">Ver menú</a>
 </div>
 
 <form class="form" method="post">

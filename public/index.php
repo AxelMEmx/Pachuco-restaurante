@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-session_start();
+
 require_once __DIR__ . '/../app/db.php';
 require_once __DIR__ . '/../app/layout/header.php';
 
@@ -20,14 +20,14 @@ $featured = db()->query(
     <div>
         <span class="hero-kicker">Cocina mexicana contemporanea</span>
         <h1>Sabores de barrio, mesa bien servida.</h1>
-        <p>Pachuco reune antojitos, brasas, salsas hechas en casa y cocteleria fresca en un ambiente relajado para comer bien cualquier dia de la semana.</p>
+        <p>El Pachuco reune antojitos, brasas, salsas hechas en casa y cocteleria fresca en un ambiente relajado para comer bien cualquier dia de la semana.</p>
         <div class="actions">
             <a class="button" href="<?= e(app_url('reservations.php')) ?>">Reservar mesa</a>
-            <a class="button secondary" href="<?= e(app_url('menu.php')) ?>">Ver menu</a>
+            <a class="button secondary" href="<?= e(app_url('menu.php')) ?>">Ver menú</a>
         </div>
     </div>
     <aside class="hero-panel">
-        <h2>Hoy en Pachuco</h2>
+        <h2>Hoy en El Pachuco</h2>
         <p class="muted">Servicio de comedor, pedidos para recoger y reservaciones para grupos.</p>
         <ul>
             <li>Comedor abierto de 13:00 a 23:00</li>

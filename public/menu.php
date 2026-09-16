@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-session_start();
+
 require_once __DIR__ . '/../app/db.php';
 require_once __DIR__ . '/../app/layout/header.php';
 
@@ -25,13 +25,13 @@ $loggedUser = current_user();
 <div class="section-title">
     <div>
         <span class="eyebrow">Carta</span>
-        <h1>Menu</h1>
+        <h1>Menú</h1>
         <p class="muted">Agrega tus favoritos, ajusta cantidades y confirma tu pedido en la misma pantalla.</p>
     </div>
     <a class="button secondary" href="<?= e(app_url('reservations.php')) ?>">Reservar mesa</a>
 </div>
 
-<div class="menu-tools" aria-label="Filtros de menu">
+<div class="menu-tools" aria-label="Filtros de menú">
     <button class="filter-button is-active" type="button" data-filter="todos">Todos</button>
     <?php foreach (array_keys($categories) as $category): ?>
         <button class="filter-button" type="button" data-filter="<?= e($category) ?>"><?= e($category) ?></button>

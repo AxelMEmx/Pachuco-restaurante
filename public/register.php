@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-session_start();
+
 require_once __DIR__ . '/../app/db.php';
 require_once __DIR__ . '/../app/helpers.php';
 
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
 
     if ($name === '' || $email === '' || $password === '') {
-        flash('error', 'Completa tu nombre, correo y contrasena.');
+        flash('error', 'Completa tu nombre, correo y contraseña.');
         redirect('register.php');
     }
 
@@ -56,7 +56,7 @@ require_once __DIR__ . '/../app/layout/header.php';
         <input id="phone" name="phone" autocomplete="tel">
     </div>
     <div class="form-row">
-        <label for="password">Contrasena</label>
+        <label for="password">Contraseña</label>
         <input id="password" name="password" type="password" minlength="6" autocomplete="new-password" required>
     </div>
     <button type="submit">Crear cuenta</button>
