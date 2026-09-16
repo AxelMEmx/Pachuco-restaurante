@@ -8,54 +8,7 @@ Proyecto base en PHP 8 + MySQL para un restaurante. Incluye login, registro, for
 - MySQL o MariaDB
 - Servidor local como XAMPP, Laragon, WAMP o el servidor integrado de PHP
 
-## 2. Crear la base de datos
-
-1. Abre phpMyAdmin o tu cliente MySQL favorito.
-2. Crea una base de datos llamada `pachuco_restaurante`.
-3. Importa el archivo:
-
-```sql
-database/schema.sql
-```
-
-Ese archivo crea 7 tablas y carga 15 registros por tabla:
-
-- `users`
-- `categories`
-- `menu_items`
-- `restaurant_tables`
-- `reservations`
-- `orders`
-- `order_items`
-
-## 3. Configurar conexión
-
-Edita `app/config.php` si tus datos de MySQL son diferentes:
-
-```php
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'pachuco_restaurante');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-```
-
-## 4. Ejecutar el proyecto
-
-Desde la carpeta del proyecto:
-
-```bash
-php -S localhost:8000 -t public
-```
-
-Luego abre:
-
-```text
-http://localhost:8000
-```
-
-Si usas XAMPP, copia el proyecto dentro de `htdocs` y entra desde el navegador con la ruta correspondiente.
-
-## 5. Usuarios de prueba
+## 2. Usuarios de prueba
 
 Todos los usuarios sembrados usan la contraseña:
 
@@ -75,7 +28,7 @@ Cliente:
 ana@pachuco.test
 ```
 
-## 6. Estructura del proyecto
+## 3. Estructura del proyecto
 
 ```text
 app/
@@ -99,7 +52,7 @@ public/
   assets/css/styles.css
 ```
 
-## 7. Flujo recomendado de desarrollo
+## 4. Flujo de desarrollo
 
 1. Crear la base de datos y tablas.
 2. Crear conexión segura con PDO.
