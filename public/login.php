@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-session_start();
 require_once __DIR__ . '/../app/auth.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -27,10 +26,14 @@ require_once __DIR__ . '/../app/layout/header.php';
         <h1>Mi cuenta</h1>
         <p class="muted">Entra para consultar tus reservaciones y hacer pedidos mas rapido.</p>
     </div>
-    <a class="button secondary" href="<?= e(app_url('register.php')) ?>">Crear cuenta</a>
 </div>
 
 <form class="form" method="post">
+    <div style="text-align:center; margin-bottom:1.5rem;">
+        <img src="/Pachuco%20restaurante/public/assets/img/logoelpachuco.jpg"
+             alt="El Pachuco Restaurante"
+             style="width:140px; height:140px; object-fit:cover; border-radius:50%;">
+    </div>
     <div class="form-row">
         <label for="email">Correo electronico</label>
         <input id="email" name="email" type="email" autocomplete="email" required>
@@ -39,7 +42,10 @@ require_once __DIR__ . '/../app/layout/header.php';
         <label for="password">Contrasena</label>
         <input id="password" name="password" type="password" autocomplete="current-password" required>
     </div>
-    <button type="submit">Entrar</button>
+    <div style="display:flex;gap:1rem;align-items:center;">
+        <button type="submit">Entrar</button>
+        <a class="button secondary" href="<?= e(app_url('register.php')) ?>">Crear cuenta</a>
+    </div>
 </form>
 
 <?php require_once __DIR__ . '/../app/layout/footer.php'; ?>
