@@ -879,3 +879,18 @@ button:disabled {
     padding: 1rem 0;
     }
 }
+
+.brand-logo {
+height: 48px;
+width: 48px;
+object-fit: cover;
+border-radius: 50%;
+vertical-align: middle;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+

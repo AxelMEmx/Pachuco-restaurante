@@ -15,11 +15,19 @@ $user = current_user();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="El Pachuco Restaurante: cocina mexicana contemporanea, reservas y pedidos en linea.">
     <title><?= e(APP_NAME) ?></title>
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/Pachuco%20restaurante/public/assets/img/favicon.ico">
     <link rel="stylesheet" href="<?= e(app_url('assets/css/styles.css')) ?>">
 </head>
 <body>
 <header class="site-header">
-    <a class="brand" href="<?= e(app_url('index.php')) ?>"> El Pachuco</a>
+
+    <a class="brand" href="<?= e(app_url('index.php')) ?>">
+        <img src="/Pachuco%20restaurante/public/assets/img/logoelpachuco.jpg"
+             alt="El Pachuco Restaurante"
+             class="brand-logo">
+        <?= e(APP_NAME) ?>
+    </a>
+
     <nav class="main-nav" aria-label="Navegacion principal">
         <?php if ($user && $user['role'] === 'admin'): ?>
             <a href="<?= e(app_url('admin.php')) ?>">Operacion</a>

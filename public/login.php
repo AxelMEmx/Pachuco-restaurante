@@ -29,6 +29,11 @@ require_once __DIR__ . '/../app/layout/header.php';
 </div>
 
 <form class="form" method="post">
+    <div style="text-align:center; margin-bottom:1.5rem;">
+        <img src="/Pachuco%20restaurante/public/assets/img/logoelpachuco.jpg"
+             alt="El Pachuco Restaurante"
+             style="width:140px; height:140px; object-fit:cover; border-radius:50%;">
+    </div>
     <div class="form-row">
         <label for="email">Correo electronico</label>
         <input id="email" name="email" type="email" autocomplete="email" required>
